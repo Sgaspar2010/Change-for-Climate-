@@ -1,0 +1,287 @@
+/* Fuentes */
+:root {
+  --mainColor: #5F897A;
+  --secondaryColor1: #027452;
+  --secondaryColor2: #419DD7;
+  --tertiaryColor1: #38B3E2;
+  --tertiaryColor2: #1373C9;
+  --white: #ffffff;
+  --black: #000000;
+  --gray: #DBDBDB;
+}
+
+.ubuntu-light {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.ubuntu-regular {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ubuntu-medium {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.ubuntu-bold {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.ubuntu-light-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.ubuntu-regular-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.ubuntu-medium-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.ubuntu-bold-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Preloader */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 9999;
+}
+
+.preloader::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0 -20px;
+    border: 4px solid #333;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loaded .preloader {
+    transition-property: opacity, left;
+    transition-duration: 0.75s, 0s;
+    transition-delay: 0s, 0.75s;
+    opacity: 0;
+    left: 100%;
+}
+
+/* Globales */
+html {
+  /* 1rem = 10px */
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+}
+p,a,strike {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.6rem;
+}
+h1,h2 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--secondaryColor1);
+}
+a {
+  color: var(--secondaryColor1);
+}
+strike {
+  font-size: 2rem;
+}
+h1 {
+  font-size: 2.6rem;
+}
+h2 {
+  font-size: 2.2rem;
+}
+h3 {
+  font-size: 1.8rem;
+}
+
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Utilidades */
+.no-margin {
+    margin: 0;
+}
+.no-top {
+    margin-top: 0;
+}
+.no-bottom {
+  margin-bottom: 0;
+}
+.center {
+    text-align: center;
+}
+.contenedor {
+    padding: 1rem;
+}
+.contenedor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: end;
+  align-items: center;
+}
+.contenedor-grid img {
+  height: 30rem;
+  width: auto;
+}
+.contenedor--verde {
+  background: var(--secondaryColor1);
+}
+.contenedor--verde {
+  h2,p {
+    color: var(--white);
+  }
+  a {
+    color: var(--secondaryColor2);
+  }
+}
+.btn--primario {
+  text-decoration: none !important;
+  background-color: var(--tertiaryColor2);
+  padding: 1rem;
+  color: var(--white) !important;
+  display: inline-block;
+  width: 14rem;
+  text-align: center;
+}
+.btn--primario:hover {
+  transition: .1s;
+  background-color: var(--tertiaryColor1);
+}
+.btn--secundario {
+  text-decoration: none !important;
+  background-color: var(--secondaryColor1);
+  padding: 1rem;
+  color: var(--white) !important;
+  display: inline-block;
+  width: 14rem;
+  text-align: center;
+}
+.btn--secundario:hover {
+  transition: .1s;
+  background-color: var(--mainColor);
+}
+
+/* Header */
+.header {
+  background-image: url(../assets/header.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 57rem;
+}
+
+@keyframes disappear {
+  from {font-size: 2rem;}
+  to {font-size: 0rem;}
+}
+strike {
+  font-size: 0rem;
+  color: black;
+  animation-name: disappear;
+  animation-duration: 8s;
+}
+
+@keyframes main-title {
+  from {font-size: 0rem;}
+  to {font-size: 10rem;}
+}
+.main-title {
+  transition: .1s;
+  color: white;
+  text-shadow: 1px  0px 0px black,
+               0px  1px 0px black,
+              -1px  0px 0px black,
+               0px -1px 0px black;
+  animation-name: main-title;
+  animation-duration: 4s;
+  font-size: 10rem;
+}
+
+
+.nav {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--white);
+  border-bottom: 1px #000000 solid;
+}
+.logo {
+  color: var(--white);
+  text-shadow: 1px  0px 0px black,
+               0px  1px 0px black,
+              -1px  0px 0px black,
+               0px -1px 0px black;
+  text-decoration: none;
+}
+
+.barra {
+  display: flex;
+}
+.barra a {
+  background-color: var(--white);
+  text-decoration: none;
+  color: var(--secondaryColor1);
+  padding: 1.5rem;
+  border-bottom: .2rem var(--white) solid;
+}
+.barra a:hover {
+  border-bottom: .2rem var(--secondaryColor1) solid;
+}
+.barra a:last-child {
+  margin: 0;
+}
+.subheading {
+  color: var(--secondaryColor1);
+}
+.login {
+  border: .2rem var(--secondaryColor1) solid !important;
+}
+.login:hover {
+  transition: .1s;
+  background-color: var(--secondaryColor1);
+  color: var(--white);
+}
+
+/* Main */
